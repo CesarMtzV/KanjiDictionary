@@ -26,3 +26,7 @@ body {
     font-size: 6rem;
     background: red;
 }
+
+.kunReadingContainer{
+    border: 1px solid green;
+}

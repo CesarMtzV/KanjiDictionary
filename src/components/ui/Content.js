@@ -1,9 +1,14 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import { Paper } from '@material-ui/core'
+import { makeStyles, Paper, Container } from '@material-ui/core'
+import { yellow } from '@material-ui/core/colors'
 
-
+const useStyles = makeStyles((theme) => ({
+    paper: {
+        background: yellow
+    }
+}))
 
 
 const Content = () => {
@@ -14,9 +19,10 @@ const Content = () => {
             <Paper className="kanjiBig" >字</Paper>
           </Grid>
 
+          {/* KANJI DETAILS - START */}
           <Grid container item xs={6} sm={4} className="kanjiDetail" alignItems="center" justify="center">
 
-            {/* NESTED GRID */}
+            {/* NESTED GRID - START */}
             <Grid container direction="column" xs={6}>
 
               <Grid container item direction="row" justify="space-between">
@@ -41,7 +47,27 @@ const Content = () => {
               </Grid>
 
             </Grid>
+            {/* NESTED GRID - FINISH */}
+
           </Grid>
+          {/* KANJI DETAILS - FINISH */}
+
+          {/* Kun Reading - START*/}
+          <Grid container item xs={6} alignItems="center" className="kunReadingContainer">
+
+            <Grid container justify="space-between">
+                <Grid container item xs={3} className="kanjiLabel">
+                    <Typography variant="body1">kun</Typography>
+                </Grid>
+                <Grid container item xs={3} className="kanjiLabel" justify="space-around">
+                    <Typography variant="body1">あ</Typography>
+                    <Typography variant="body1">あ</Typography>
+                    <Typography variant="body1">あ</Typography>
+                </Grid>
+            </Grid> 
+            
+          </Grid> {/* Kun Reading - END */}
+
         </Grid>
     )
 }
