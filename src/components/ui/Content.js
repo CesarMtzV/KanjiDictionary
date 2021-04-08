@@ -53,17 +53,27 @@ const Content = () => {
           {/* KANJI DETAILS - FINISH */}
 
           {/* Kun Reading - START*/}
-          <Grid container item xs={6} alignItems="center" className="kunReadingContainer">
+          <Grid container item xs={12} sm={6} alignItems="center" className="kunReadingContainer">
 
             <Grid container justify="space-between">
-                <Grid container item xs={3} className="kanjiLabel">
-                    <Typography variant="body1">kun</Typography>
+                <Grid container item xs={6} className="kanjiLabel">
+                    <Typography variant="h6">kun</Typography>
                 </Grid>
-                <Grid container item xs={3} className="kanjiLabel" justify="space-around">
+                <Grid container item xs={6} className="kanjiLabel" justify="space-around">
                     <Typography variant="body1">あ</Typography>
                     <Typography variant="body1">あ</Typography>
                     <Typography variant="body1">あ</Typography>
                 </Grid>
+
+                <Grid container item xs={6} className="kanjiLabel">
+                    <Typography variant="h6">On</Typography>
+                </Grid>
+                <Grid container item xs={6} className="kanjiLabel" justify="space-around">
+                    <Typography variant="body1">おん</Typography>
+                    <Typography variant="body1">おん</Typography>
+                    <Typography variant="body1">おん</Typography>
+                </Grid>
+                
             </Grid> 
             
           </Grid> {/* Kun Reading - END */}
