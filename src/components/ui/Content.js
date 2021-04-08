@@ -52,10 +52,12 @@ const Content = () => {
           </Grid>
           {/* KANJI DETAILS - FINISH */}
 
-          {/* Kun Reading - START*/}
+          {/* Readings / Meanings / Words - START*/}
           <Grid container item xs={12} sm={6} alignItems="center" className="kunReadingContainer">
 
             <Grid container justify="space-between">
+
+                {/* Kun reading */}
                 <Grid container item xs={6} className="kanjiLabel">
                     <Typography variant="h6">kun</Typography>
                 </Grid>
@@ -65,6 +67,7 @@ const Content = () => {
                     <Typography variant="body1">あ</Typography>
                 </Grid>
 
+                {/* On readings */}
                 <Grid container item xs={6} className="kanjiLabel">
                     <Typography variant="h6">On</Typography>
                 </Grid>
@@ -73,10 +76,22 @@ const Content = () => {
                     <Typography variant="body1">おん</Typography>
                     <Typography variant="body1">おん</Typography>
                 </Grid>
+
+                {/* Meanings */}
+                <Grid container item xs={6} className="kanjiLabel">
+                    <Typography variant="h6">Meanings</Typography>
+                </Grid>
+                <Grid container item xs={6} className="kanjiLabel" justify="space-around">
+                    <Typography variant="body1">character</Typography>
+                    <Typography variant="body1">letter</Typography>
+                    <Typography variant="body1">word</Typography>
+                    <Typography variant="body1">section of village</Typography>
+                </Grid>
                 
             </Grid> 
             
-          </Grid> {/* Kun Reading - END */}
+          </Grid> {/* Readings / Meanings / Words - FINISH */}
+
 
         </Grid>
     )
