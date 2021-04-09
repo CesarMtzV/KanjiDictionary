@@ -1,23 +1,15 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
-import { makeStyles, Paper, Container } from '@material-ui/core'
-import { yellow } from '@material-ui/core/colors'
+import { Paper } from '@material-ui/core'
 import WordList from '../kanji/WordList'
 
-const useStyles = makeStyles((theme) => ({
-    paper: {
-        background: yellow
-    }
-}))
-
-
-const Content = () => {
+const Content = ({ isLoading , itemDetails, itemWordlist}) => {
     return (
         <Grid container direction="row" justify="center">
 
           <Grid container item xs={6} sm={4} justify="center" >
-            <Paper className="kanjiBig" >字</Paper>
+            <Paper className="kanjiBig" >{itemDetails.kanji}</Paper>
           </Grid>
 
           {/* KANJI DETAILS - START */}
@@ -28,23 +20,23 @@ const Content = () => {
 
               <Grid container item direction="row" justify="space-between">
                 <Typography variant="subtitle2">Grade</Typography>
-                <Typography variant="body1">1</Typography>
+                <Typography variant="body1">{itemDetails.grade}</Typography>
               </Grid>
               <Grid container item direction="row" justify="space-between">
                 <Typography variant="subtitle2">JLPT</Typography>
-                <Typography variant="body1">3</Typography>
+                <Typography variant="body1">{itemDetails.jlpt}</Typography>
               </Grid>
               <Grid container item direction="row" justify="space-between">
                 <Typography variant="subtitle2">Strokes</Typography>
-                <Typography variant="body1">6</Typography>
+                <Typography variant="body1">{itemDetails.stroke_count}</Typography>
               </Grid>
               <Grid container item direction="row" justify="space-between">
                 <Typography variant="subtitle2">Unicode</Typography>
-                <Typography variant="body1">5B57</Typography>
+                <Typography variant="body1">{itemDetails.unicode}</Typography>
               </Grid>
               <Grid container item direction="row" justify="space-between">
                 <Typography variant="subtitle2">Heisig Keyword</Typography>
-                <Typography variant="body1">character</Typography>
+                <Typography variant="body1">{itemDetails.heisig_en}</Typography>
               </Grid>
 
             </Grid>
@@ -63,9 +55,9 @@ const Content = () => {
                     <Typography variant="h6">kun</Typography>
                 </Grid>
                 <Grid container item xs={6} justify="space-around">
-                    <Typography variant="body1">あ</Typography>
-                    <Typography variant="body1">あ</Typography>
-                    <Typography variant="body1">あ</Typography>
+                    {itemDetails.kun_readings.map( (reading) => (
+                      <Typography variant="body1">{reading}</Typography>
+                    ))}
                 </Grid>
 
                 {/* On readings */}
@@ -73,9 +65,9 @@ const Content = () => {
                     <Typography variant="h6">On</Typography>
                 </Grid>
                 <Grid container item xs={6} justify="space-around">
-                    <Typography variant="body1">おん</Typography>
-                    <Typography variant="body1">おん</Typography>
-                    <Typography variant="body1">おん</Typography>
+                    {itemDetails.on_readings.map( (reading) => (
+                      <Typography variant="body1">{reading}</Typography>
+                    ))}
                 </Grid>
 
                 {/* Meanings */}
@@ -83,10 +75,9 @@ const Content = () => {
                     <Typography variant="h6">Meanings</Typography>
                 </Grid>
                 <Grid container item xs={6} justify="space-around">
-                    <Typography variant="body1">character</Typography>
-                    <Typography variant="body1">letter</Typography>
-                    <Typography variant="body1">word</Typography>
-                    <Typography variant="body1">section of village</Typography>
+                    {itemDetails.meanings.map( (meaning) => (
+                      <Typography variant="body1">{meaning}</Typography>
+                    ))}
                 </Grid>
 
                 {/* Wordlist */}

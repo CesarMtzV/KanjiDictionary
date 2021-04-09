@@ -1,13 +1,24 @@
-import React from 'react'
-import Grid from '@material-ui/core/Grid'
-import Button from '@material-ui/core/Button'
-import Container from '@material-ui/core/Container'
+import React, { useState } from 'react'
 
+const Search = ({ getQuery, search }) => {
 
-const Search = () => {
+    const [text, setText] = useState('')
+
+    const onChange = (q) => {
+        setText(q)
+        getQuery(q)
+    }
+
     return (
         <section className="searchbox-wrap">
-            <input type="text" placeholder="Search for a kanji" className="searchbox" />
+            <input 
+                type="text" 
+                placeholder="Search for a kanji" 
+                className="searchbox" 
+                value={text}
+                onChange={(e) => onChange(e.target.value)}
+                onKeyPress={search}
+            />
         </section>        
         
     )
