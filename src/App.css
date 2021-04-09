@@ -14,10 +14,12 @@ body {
     border-bottom: 1px solid gray;
 }
 
-.center {
-    justify-content: center;
-    align-self: center;
+.introduction{
+    max-width: 600px;
+    padding: 15px;
     margin: 0 auto;
+    line-height: 1.5;
+    font-size: 15px;
 }
 
 .searchbox {

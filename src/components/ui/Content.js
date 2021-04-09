@@ -6,7 +6,29 @@ import WordList from '../kanji/WordList'
 
 const Content = ({ isLoading , itemDetails, itemWordlist}) => {
     return isLoading ? (
-      <h1>loading</h1>
+      <div className="introduction">
+        <Typography variant="body1">
+          This application lets you find the Kanji details as well as a large collection of words for the specified character.
+        </Typography>
+        <Typography variant="body1">
+          These are the details that you'll obtain:
+        </Typography>
+        <ul>
+          <li>Kanji</li>
+          <li>Grade</li>
+          <li>Stroke count</li>
+          <li>Meanings</li>
+          <li>Unicode</li>
+          <li>JLPT level</li>
+          <li>Heisig keyword</li>
+          <li>Kun Readings</li>
+          <li>On Readings</li>
+        </ul>
+
+        <Typography variant="body1" className="introText">
+          Start by entering any Kanji character in the search box.
+        </Typography>
+      </div>
     ) : (
         <Grid container direction="row" justify="center">
 
