@@ -2,31 +2,14 @@ body {
     margin: 0;
 }
 
-.title {
-    border: 1px solid blue;
-}
-
-.content {
-    border: 1px solid red;
-}
-
-.kanjiLabel {
-    border: 1px solid green;
-}
-
-.kanjiDetail {
-    border: 1px solid black;
-}
-
-.kanjiBigContainer {
-    border: 1px solid purple;
-}
-
 .kanjiBig {
     font-size: 6rem;
-    background: red;
 }
 
 .kunReadingContainer{
     border: 1px solid green;
+}
+
+.word-item{
+    border-bottom: 1px solid gray;
 }

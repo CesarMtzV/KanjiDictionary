@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography'
 
 const Header = () => {
     return (
-        <Container maxWidth="lg" className="title">
+        <Container maxWidth="lg">
           <Typography variant="h2" color="textPrimary" align="center">Kanji Dictionary</Typography>
         </Container>
     )

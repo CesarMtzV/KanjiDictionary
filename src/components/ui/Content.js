@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles, Paper, Container } from '@material-ui/core'
 import { yellow } from '@material-ui/core/colors'
+import WordList from '../kanji/WordList'
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -13,14 +14,14 @@ const useStyles = makeStyles((theme) => ({
 
 const Content = () => {
     return (
-        <Grid container className="content" direction="row" justify="center">
+        <Grid container direction="row" justify="center">
 
-          <Grid container item xs={6} sm={4} className="kanjiBigContainer" justify="center" >
+          <Grid container item xs={6} sm={4} justify="center" >
             <Paper className="kanjiBig" >字</Paper>
           </Grid>
 
           {/* KANJI DETAILS - START */}
-          <Grid container item xs={6} sm={4} className="kanjiDetail" alignItems="center" justify="center">
+          <Grid container item xs={6} sm={4} alignItems="center" justify="center">
 
             {/* NESTED GRID - START */}
             <Grid container direction="column" xs={6}>
@@ -53,39 +54,44 @@ const Content = () => {
           {/* KANJI DETAILS - FINISH */}
 
           {/* Readings / Meanings / Words - START*/}
-          <Grid container item xs={12} sm={6} alignItems="center" className="kunReadingContainer">
+          <Grid container item xs={12} sm={6} alignItems="center">
 
             <Grid container justify="space-between">
 
                 {/* Kun reading */}
-                <Grid container item xs={6} className="kanjiLabel">
+                <Grid container item xs={6}>
                     <Typography variant="h6">kun</Typography>
                 </Grid>
-                <Grid container item xs={6} className="kanjiLabel" justify="space-around">
+                <Grid container item xs={6} justify="space-around">
                     <Typography variant="body1">あ</Typography>
                     <Typography variant="body1">あ</Typography>
                     <Typography variant="body1">あ</Typography>
                 </Grid>
 
                 {/* On readings */}
-                <Grid container item xs={6} className="kanjiLabel">
+                <Grid container item xs={6}>
                     <Typography variant="h6">On</Typography>
                 </Grid>
-                <Grid container item xs={6} className="kanjiLabel" justify="space-around">
+                <Grid container item xs={6} justify="space-around">
                     <Typography variant="body1">おん</Typography>
                     <Typography variant="body1">おん</Typography>
                     <Typography variant="body1">おん</Typography>
                 </Grid>
 
                 {/* Meanings */}
-                <Grid container item xs={6} className="kanjiLabel">
+                <Grid container item xs={6}>
                     <Typography variant="h6">Meanings</Typography>
                 </Grid>
-                <Grid container item xs={6} className="kanjiLabel" justify="space-around">
+                <Grid container item xs={6} justify="space-around">
                     <Typography variant="body1">character</Typography>
                     <Typography variant="body1">letter</Typography>
                     <Typography variant="body1">word</Typography>
                     <Typography variant="body1">section of village</Typography>
+                </Grid>
+
+                {/* Wordlist */}
+                <Grid container item>
+                    <WordList />
                 </Grid>
                 
             </Grid> 
