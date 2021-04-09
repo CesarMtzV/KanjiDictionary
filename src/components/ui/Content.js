@@ -5,7 +5,9 @@ import { Paper } from '@material-ui/core'
 import WordList from '../kanji/WordList'
 
 const Content = ({ isLoading , itemDetails, itemWordlist}) => {
-    return (
+    return isLoading ? (
+      <h1>loading</h1>
+    ) : (
         <Grid container direction="row" justify="center">
 
           <Grid container item xs={6} sm={4} justify="center" >
@@ -55,8 +57,8 @@ const Content = ({ isLoading , itemDetails, itemWordlist}) => {
                     <Typography variant="h6">kun</Typography>
                 </Grid>
                 <Grid container item xs={6} justify="space-around">
-                    {itemDetails.kun_readings.map( (reading) => (
-                      <Typography variant="body1">{reading}</Typography>
+                    {itemDetails.kun_readings.map( (reading, index) => (
+                      <Typography variant="body1" key={index}>{reading}</Typography>
                     ))}
                 </Grid>
 
@@ -65,8 +67,8 @@ const Content = ({ isLoading , itemDetails, itemWordlist}) => {
                     <Typography variant="h6">On</Typography>
                 </Grid>
                 <Grid container item xs={6} justify="space-around">
-                    {itemDetails.on_readings.map( (reading) => (
-                      <Typography variant="body1">{reading}</Typography>
+                    {itemDetails.on_readings.map( (reading, index) => (
+                      <Typography variant="body1" key={index}>{reading}</Typography>
                     ))}
                 </Grid>
 
@@ -75,14 +77,14 @@ const Content = ({ isLoading , itemDetails, itemWordlist}) => {
                     <Typography variant="h6">Meanings</Typography>
                 </Grid>
                 <Grid container item xs={6} justify="space-around">
-                    {itemDetails.meanings.map( (meaning) => (
-                      <Typography variant="body1">{meaning}</Typography>
+                    {itemDetails.meanings.map( (meaning, index) => (
+                      <Typography variant="body1" key={index}>{meaning}</Typography>
                     ))}
                 </Grid>
 
                 {/* Wordlist */}
                 <Grid container item>
-                    <WordList />
+                    <WordList wordlist={itemWordlist}/>
                 </Grid>
                 
             </Grid> 

@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography'
 
 
 //TODO: Add the prop "items" and render dynamically
-const WordList = () => {
+const WordList = ({ wordlist }) => {
     return (
         <Grid container direction="column" >
           <Grid container item justify="center">
@@ -14,9 +14,9 @@ const WordList = () => {
           </Grid>
         {/* TODO: MAKE THIS DYNAMIC */}
           <Grid container item>
-            <WordItem />
-            <WordItem />
-            <WordItem />
+            {wordlist.map( (word, index) => (
+              <WordItem wordItem={word} key={index}/>
+            ))}
           </Grid>
 
         </Grid>
