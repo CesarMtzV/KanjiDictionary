@@ -6,8 +6,10 @@ body {
     font-size: 6rem;
 }
 
-.kunReadingContainer{
-    border: 1px solid green;
+.highlight {
+    background-color: #FDF7E3;
+    border: 2px solid #FBF2D4;
+    border-radius: 15;
 }
 
 .word-item{

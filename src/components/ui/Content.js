@@ -58,9 +58,9 @@ const Content = ({ isLoading , itemDetails, itemWordlist}) => {
                 <Typography variant="subtitle2">Unicode</Typography>
                 <Typography variant="body1">{itemDetails.unicode}</Typography>
               </Grid>
-              <Grid container item direction="row" justify="space-between">
+              <Grid container item direction="row" justify="space-between" >
                 <Typography variant="subtitle2">Heisig Keyword</Typography>
-                <Typography variant="body1">{itemDetails.heisig_en}</Typography>
+                <Typography variant="body1" className="highlight">{itemDetails.heisig_en}</Typography>
               </Grid>
 
             </Grid>
@@ -100,7 +100,7 @@ const Content = ({ isLoading , itemDetails, itemWordlist}) => {
                 </Grid>
                 <Grid container item xs={6} justify="space-around">
                     {itemDetails.meanings.map( (meaning, index) => (
-                      <Typography variant="body1" key={index}>{meaning}</Typography>
+                      <Typography variant="body1" key={index} className="highlight">{meaning}</Typography>
                     ))}
                 </Grid>
 
